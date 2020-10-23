@@ -1,0 +1,68 @@
+﻿@model IEnumerable<FlowGestaoContrato.BLL.Models.Usuario>
+
+@using FlowGestaoContrato.BLL.Models
+
+@{ ViewData["Title"] = "Usuarios cadastrados"; }
+
+
+<div class="tabelas">
+
+    <partial name="_Confirmacoes" />
+
+    <div class="collection with-header">
+        <div class="collection-header grey darken-1">
+            <div class="row">
+                <div class="col s10">
+                    <h6 class="white-text">Usuários cadastrados</h6>
+                </div>
+                <div class="col s2">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="collection-item">
+            <table class="striped highlight">
+                <thead>
+                    <tr>
+                        <th>
+                            Nome
+                        </th>
+                        <th>
+                            CPF
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Telefone
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CPF)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PhoneNumber)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/OperacoesUsuario.min.js"></script>
+}
