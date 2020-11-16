@@ -1,5 +1,5 @@
-﻿using FlowGestaoContrato.BLL.Models;
-using FlowGestaoContrato.DAL.Interfaces;
+﻿using FlowGestaoContrato.Models;
+using FlowGestaoContrato.Interfaces;
 using FlowGestaoContrato.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;

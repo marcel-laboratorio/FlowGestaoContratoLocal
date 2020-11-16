@@ -1,5 +1,5 @@
-using FlowGestaoContrato.BLL.Models;
-using FlowGestaoContrato.DAL;
+using FlowGestaoContrato.Models;
+using FlowGestaoContrato.Context;
 using FlowGestaoContrato.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -22,8 +22,8 @@ namespace FlowGestaoContrato
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<Contexto>(opcoes => opcoes.UseSqlServer(Configuration.GetConnectionString("ConexaoDB")));
-            services.AddIdentity<Usuario, Funcao>().AddEntityFrameworkStores<Contexto>();
+            services.AddDbContext<AppDbFlowDB>(opcoes => opcoes.UseSqlServer(Configuration.GetConnectionString("ConexaoDB")));
+            services.AddIdentity<Usuario, Funcao>().AddEntityFrameworkStores<AppDbFlowDB>();
 
             services.AddAuthentication();
             services.AddAuthorization();

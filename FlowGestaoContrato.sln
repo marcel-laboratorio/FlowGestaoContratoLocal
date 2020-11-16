@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowGestaoContrato", "FlowGestaoContrato\FlowGestaoContrato.csproj", "{F115B63A-B5E5-4204-81A7-A09B085DE47B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowGestaoContrato.DAL", "FlowGestaoContrato.DAL\FlowGestaoContrato.DAL.csproj", "{7D2466E9-2549-4A4D-8552-59F58888D899}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowGestaoContrato.BLL", "FlowGestaoContrato.BLL\FlowGestaoContrato.BLL.csproj", "{43D71E66-C33F-4CFF-A100-2CA0717564E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlowGestaoContrato", "FlowGestaoContrato\FlowGestaoContrato.csproj", "{F115B63A-B5E5-4204-81A7-A09B085DE47B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +15,6 @@ Global
 		{F115B63A-B5E5-4204-81A7-A09B085DE47B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F115B63A-B5E5-4204-81A7-A09B085DE47B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F115B63A-B5E5-4204-81A7-A09B085DE47B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7D2466E9-2549-4A4D-8552-59F58888D899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D2466E9-2549-4A4D-8552-59F58888D899}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D2466E9-2549-4A4D-8552-59F58888D899}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D2466E9-2549-4A4D-8552-59F58888D899}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43D71E66-C33F-4CFF-A100-2CA0717564E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43D71E66-C33F-4CFF-A100-2CA0717564E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43D71E66-C33F-4CFF-A100-2CA0717564E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43D71E66-C33F-4CFF-A100-2CA0717564E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
