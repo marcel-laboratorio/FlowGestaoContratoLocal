@@ -14,6 +14,12 @@ namespace FlowGestaoContrato.Context
 
         public DbSet<Usuario> Usuarios { get; set; }
 
+        public DbSet<Processo> Processos { get; set; }
+
+        public DbSet<Log> Logs { get; set; }
+
+        public DbSet<DocumentacaoAnexa> DocumentacaoAnexas { get; set; }
+
         public AppDbFlowDB(DbContextOptions<AppDbFlowDB> opcoes) : base(opcoes)
         {
 
