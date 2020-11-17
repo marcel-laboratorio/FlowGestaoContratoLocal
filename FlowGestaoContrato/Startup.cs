@@ -30,6 +30,7 @@ namespace FlowGestaoContrato
 
             services.ConfigurarRepositorios();
             services.ConfigurarCookies();
+
             services.ConfigurarNomeUsuario();
             services.ConfigurarSenhaUsuario();
 

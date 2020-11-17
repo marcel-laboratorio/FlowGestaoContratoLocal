@@ -22,9 +22,9 @@ namespace FlowGestaoContrato.Repositories
         {
             try
             {
-                return _contexto.Processos
-                    .Where(x => x.ID_STATUS_VIGENCIA == IdStatusVigencia)
-                    .ToList();
+               return _contexto.Processos
+                    .Where(x => x.ID_STATUS_VIGENCIA == 3)
+                    .ToList ();
             }
             catch (Exception ex)
             {

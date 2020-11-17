@@ -9,28 +9,27 @@ using System.Threading.Tasks;
 
 namespace FlowGestaoContrato.Repositories
 {
-    public class DocumentacaoAnexaRepositorio : RepositorioGenerico<DocumentacaoAnexa >, IDocumentacaoAnexaRepositorio
+    public class ContatoFornecedorRepositorio : RepositorioGenerico<ContatoFornecedor>, IContatoFornecedorRepositorio
     {
         private readonly AppDbFlowDB _contexto;
 
-        public DocumentacaoAnexaRepositorio(AppDbFlowDB contexto) : base(contexto)
+        public ContatoFornecedorRepositorio(AppDbFlowDB contexto) : base(contexto)
         {
             _contexto = contexto;
         }
 
-        public DocumentacaoAnexa RetornarDocumentacaoAnexa(string IdChaveProcesso)
+        public ContatoFornecedor RetornarProcessosPorFornecedor(string email)
         {
             try
             {
-                return _contexto
-                    .DocumentacaoAnexas
-                    .Where(x => x.ID_CHAVE_CONTRATO_APOLICE_RELPDF == IdChaveProcesso)
-                    .FirstOrDefault();
+                return _contexto.ContatosFornecedor
+                    .FirstOrDefault(x => x.DS_EMAIL_CNTAT == email);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+           
         }
     }
 }

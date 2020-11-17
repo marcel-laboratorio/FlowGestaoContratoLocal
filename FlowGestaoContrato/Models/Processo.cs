@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FlowGestaoContrato.Models
 {
+    [Table("TBL_APP_GTC_PROCESSOS", Schema = "dbo")]
     public class Processo
     {
+        [Column(name: "ID_PROCESSO", TypeName = "int"), Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID_PROCESSO { get; set; }
         public string ID_CHAVE_CONTRATO_APOLICE_RELPDF { get; set; }
         public string NR_CONTRATO { get; set; }
@@ -16,7 +17,7 @@ namespace FlowGestaoContrato.Models
         public string TIPO_APOLICE { get; set; }
         public string DS_CLAUSULA { get; set; }
         public string DS_ESCOPO { get; set; }
-        public int ID_USUARIO_RESERVA { get; set; }
+        public string ID_USUARIO_RESERVA { get; set; }
         public int ID_STATUS_VIGENCIA { get; set; }
         public int ID_SUBSTATUS_VIGENCIA { get; set; }
         public int ID_SITUACAO_EXIGIVEL { get; set; }
@@ -29,7 +30,7 @@ namespace FlowGestaoContrato.Models
         public string DS_OBS_ANALISTA_SEGUROS { get; set; }
         public string ID_USUARIO_APROVACAO { get; set; }
         public string NM_USUARIO { get; set; }
-        public int QT_NOTIFICACAO { get; set; }
+        public int QT_NOTIFICAR { get; set; }
         public DateTime DT_NOTIFICACAO { get; set; }
         public DateTime DT_CRIACAO { get; set; }
         public DateTime DT_ALTERACAO { get; set; }

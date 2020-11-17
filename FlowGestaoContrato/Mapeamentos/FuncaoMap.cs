@@ -16,13 +16,13 @@ namespace FlowGestaoContrato.Mapeamentos
             builder.Property(f => f.Descricao).IsRequired().HasMaxLength(30); // tamanho maximo
 
             builder.HasData(
-                new Funcao
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Name = "Gestor",
-                    NormalizedName = "GESTOR",
-                    Descricao = "Gestor do Flow"
-                },
+                //new Funcao
+                //{
+                //    Id = Guid.NewGuid().ToString(),
+                //    Name = "Gestor",
+                //    NormalizedName = "GESTOR",
+                //    Descricao = "Gestor do Flow"
+                //},
 
                 new Funcao
                 {

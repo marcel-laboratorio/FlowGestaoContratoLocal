@@ -1,13 +1,15 @@
-﻿using FlowGestaoContrato.Models;
-using FlowGestaoContrato.Mapeamentos;
+﻿using FlowGestaoContrato.Mapeamentos;
+using FlowGestaoContrato.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
+//  public class AppDbFlowDB : DbContext
 namespace FlowGestaoContrato.Context
 {
-    public class AppDbFlowDB : DbContext
+    public class AppDbFlowDB : IdentityDbContext<Usuario, Funcao, string>
     {
         // Cria construtor de contexto
         public DbSet<Funcao> Funcoes { get; set; }
@@ -16,9 +18,7 @@ namespace FlowGestaoContrato.Context
 
         public DbSet<Processo> Processos { get; set; }
 
-        public DbSet<Log> Logs { get; set; }
-
-        public DbSet<DocumentacaoAnexa> DocumentacaoAnexas { get; set; }
+        public DbSet<ContatoFornecedor> ContatosFornecedor { get; set; }
 
         public AppDbFlowDB(DbContextOptions<AppDbFlowDB> opcoes) : base(opcoes)
         {
@@ -31,6 +31,30 @@ namespace FlowGestaoContrato.Context
 
             builder.ApplyConfiguration(new UsuarioMap());
             builder.ApplyConfiguration(new FuncaoMap());
+
+            builder.Entity<ContatoFornecedor>(entity =>
+            {
+                entity.HasNoKey();
+            });
+
+            // builder.ApplyConfiguration(new ProcessoMap());
+
+            //builder.Entity<Processo>(entity =>
+            //{
+            //    entity.HasNoKey();
+            //});
+
+            //builder.Entity<Usuario>(entity =>
+            //{
+            //    entity.HasNoKey();
+            //});
+
+            //builder.Entity<Funcao>(entity =>
+            //{
+            //    entity.HasNoKey();
+            //});
+
+
         }
     }
 }

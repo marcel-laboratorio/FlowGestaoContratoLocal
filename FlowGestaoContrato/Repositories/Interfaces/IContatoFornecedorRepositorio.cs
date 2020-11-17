@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FlowGestaoContrato.Interfaces
 {
-    public interface IDocumentacaoAnexaRepositorio
+    public interface IContatoFornecedorRepositorio : IRepositorioGenerico<ContatoFornecedor>
     {
-        DocumentacaoAnexa RetornarDocumentacaoAnexa(string  IdChaveProcesso);
+        ContatoFornecedor RetornarProcessosPorFornecedor(string email);
     }
 }

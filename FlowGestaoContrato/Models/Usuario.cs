@@ -10,5 +10,12 @@ namespace FlowGestaoContrato.Models
         public string CPF { get; set; }
 
         public bool PrimeiroAcesso { get; set; }
+
+        public StatusConta Status { get; set; }
+    }
+
+    public enum StatusConta
+    {
+        Analisando, Aprovado, Reprovado
     }
 }
