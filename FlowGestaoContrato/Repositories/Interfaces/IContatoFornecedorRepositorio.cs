@@ -8,6 +8,6 @@ namespace FlowGestaoContrato.Interfaces
 {
     public interface IContatoFornecedorRepositorio : IRepositorioGenerico<ContatoFornecedor>
     {
-        ContatoFornecedor RetornarProcessosPorFornecedor(string email);
+        ContatoFornecedor RetornarProcessosPorFornecedor(string email, string senha);
     }
 }

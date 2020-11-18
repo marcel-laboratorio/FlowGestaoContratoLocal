@@ -23,7 +23,8 @@ namespace FlowGestaoContrato.Repositories
             try
             {
                return _contexto.Processos
-                    .Where(x => x.ID_STATUS_VIGENCIA == 3)
+                    .Where(x => x.ID_STATUS_VIGENCIA == 3
+                    && x.NM_FORNECEDOR.ToUpper () == fornecedor.ToUpper ())
                     .ToList ();
             }
             catch (Exception ex)

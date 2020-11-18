@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using FlowGestaoContrato.Interfaces;
 using FlowGestaoContrato.ViewModels;
@@ -12,17 +13,29 @@ namespace FlowGestaoContrato.Controllers
     public class ProcessoController : Controller
     {
         private readonly IProcessoRepositorio _processoRepositorio;
+        private readonly IUsuarioRepositorio _usuarioRepositorio;
 
-        public ProcessoController(IProcessoRepositorio processoRepositorio)
+        public ProcessoController(IProcessoRepositorio processoRepositorio, IUsuarioRepositorio usuarioRepositorio)
         {
             _processoRepositorio = processoRepositorio;
+            _usuarioRepositorio = usuarioRepositorio;
         }
 
-        [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Administrador,Fornecedor")]
         public IActionResult Index()
         {
-            // Pegar o contexto do Usuario, para pegar o fornecedor
-            var fornecedor = "IUS NATURA LTDA";
+            string id=string.Empty ;
+            if (User.Identity.IsAuthenticated)
+            {
+                var authent = ((ClaimsIdentity)User.Identity).Claims.FirstOrDefault () ;
+                if (authent != null)
+                {
+                    id = authent.Value.ToString();
+                }
+            }
+           
+            var usuario =  _usuarioRepositorio.PegarUsuarioPeloId  (id);
+            var fornecedor = usuario.Result.Fornecedor; //"IUS NATURA LTDA";
             var idStatusVigencia = 3;
 
             List<ProcessoViewModel> viewModel = new List<ProcessoViewModel>();
